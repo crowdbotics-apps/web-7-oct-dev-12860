@@ -18,7 +18,7 @@ export class _Blank extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return { headerLeft: <SlideMenuIcon navigationProps={navigation} /> }
   }
-  state = { DateTimePicker_4: new Date("10/07/2020"), TextInput_5: "" }
+  state = { TextInput_5: "", DateTimePicker_4: new Date("10/07/2020") }
   render = () => (
     <View style={styles.View_1}>
       <Button
@@ -28,14 +28,6 @@ export class _Blank extends React.Component {
         onPress={() => alert("Pressed!")}
       />
       <Text style={styles.Text_3}>Sample text content</Text>
-      <DateTimePicker
-        showIcon={false}
-        style={styles.DateTimePicker_4}
-        date={this.state.DateTimePicker_4}
-        onDateChange={selectedDate =>
-          this.setState({ DateTimePicker_4: selectedDate })
-        }
-      />
       <TextInput
         placeholder="Number Input Placeholder"
         editable={true}
@@ -43,6 +35,14 @@ export class _Blank extends React.Component {
         style={styles.TextInput_5}
         value={this.state.TextInput_5}
         onChangeText={nextValue => this.setState({ TextInput_5: nextValue })}
+      />
+      <DateTimePicker
+        showIcon={false}
+        style={styles.DateTimePicker_4}
+        date={this.state.DateTimePicker_4}
+        onDateChange={selectedDate =>
+          this.setState({ DateTimePicker_4: selectedDate })
+        }
       />
     </View>
   )
